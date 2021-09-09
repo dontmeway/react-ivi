@@ -1,0 +1,394 @@
+body {
+  margin: 0;
+  font-size: 20px;  
+  padding: 20px 0 0 0; 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #1e0838;
+  color: white;
+  width: 100%;
+  height: 100%;
+
+}
+h1 {
+  width: 92%;
+  margin: 30px auto 20px;
+  border-bottom: 1px solid white;
+
+}
+.wrapper {
+  background-color: #4A148C;
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 1300px;
+  width: 100%;
+  margin: auto;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;;
+  box-sizing: border-box;
+  outline: 0;
+  border: 0;
+  a {
+    text-decoration: none;
+  }
+  li {
+    list-style: none;
+  }
+  margin: 0;
+  padding: 0;
+}
+.contentLoader {
+  margin: 0 15px;
+}
+.emptyCard {
+  // position: absolute;
+  width: 160px;
+  height: 250px;
+  border-radius: 8px;
+  background-color: #1e0838;
+  transition: 400ms all;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 20;
+  p {
+    opacity: 0.7;
+    transition: 200ms all;
+    color: white;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &:hover{
+    transform: translateY(-10px);
+  }
+}
+.container {
+  max-width: 1150px;
+  width: 100%;
+  margin: auto;
+  padding: 0 10px;
+  // overflow: hidden;
+  position: relative;
+  
+  .bi-chevron-compact-right {
+    position: absolute;
+    right: -80px;
+    top: 140px;
+    cursor: pointer;
+    font-size: 80px;
+    z-index: 15;
+
+  }
+  .bi-chevron-compact-left {
+    position: absolute;
+    left: -80px;
+    top: 140px;
+    cursor: pointer;
+    font-size: 80px;
+    z-index: 15;
+
+  }
+  h3 {
+    margin-bottom: 30px;
+    font-size: 22px;
+  }
+}
+.card {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  width: 160px;
+  height: 320px;
+  border-radius: 8px;
+  transition: 400ms all;
+  margin: 0 15px;
+  margin-bottom: 20px;
+  .cardSpan {
+    font-size: 12px;
+  }
+  &:hover {
+    transform: scale(1.2, 1.2);
+    .imageHover {
+      visibility: visible;
+      z-index: 10;
+      .favorites, .movieInfo {
+        transform: translateX(0);
+      }
+    }
+  }
+  img {
+    border-radius: 8px;
+    display: block;
+    margin-bottom: 10px;
+    
+    }
+  }
+  .imageHover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    border-radius: 8px;
+    background-color: black;
+    opacity: 0.8;
+    visibility: hidden;
+    transition: 250ms all;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .movieInfo {
+      height: 50%;   
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-left: 10px;
+      transform: translateX(-100%);
+      transition:300ms all;
+      z-index: 25;
+      opacity: 1 !important;
+      .movieInfoSpan {
+        font-size: 24px;
+        font-weight: bold;
+      }
+      p {
+        font-size: 16px;
+        margin-top: 15px;
+      }
+      .duration {
+        font-size: 12px;
+        margin: 10px 0;
+      }
+    }
+    .favorites {
+      position: relative;
+      height: 50%;
+      transform: translateX(100%);
+      transition:300ms all;
+      i {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 30px;
+        z-index: 99;
+        opacity: 0.8;
+        transition: 300ms all;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+}
+.movies {
+  width: 100%;
+  overflow: hidden;
+}
+
+.moviesBlock {
+  display: flex;
+  width: 9999px;
+  transition: 400ms all;
+  transform: translateX(0)
+}
+
+
+.btn {
+  color: white;
+  font-weight: 500;
+  padding: 10px 15px;
+  background-color: #c21851;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 200ms all;
+  &:hover {
+    transform: scale(1.2, 1.2);
+    opacity: 0.9;
+  }
+}
+.emptyPage {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    margin-bottom: 10px;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+h3 {
+  margin-bottom: 30px;
+  font-size: 22px;
+}
+
+.pageParent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .page {
+    max-width: 1140px;
+    width: 100%;
+  }
+  h3 {
+    align-self: flex-start;
+    margin-left: 70px;
+  }
+}
+
+.red {
+  color: red;
+  border-color: red;
+}
+.green {
+  color: rgb(13, 141, 13);
+  border-color: green;
+
+}
+.orange {
+  color: orange; 
+  border-color: orange;
+
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 29;
+  overflow: hidden;
+}
+.moviePage {
+  position: fixed;
+  right: 200px;
+  left: 200px;
+  height: 750px;
+  border-radius: 18px;
+  overflow: hidden;
+  top: 20px;
+  display: block;
+  margin: 0 auto;
+  z-index: 30;
+  background: white;
+  transition: 300ms all;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .bi-x-circle-fill {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 50px;
+    color: #4A148C;
+    transition: 200ms all;
+    z-index: 31;
+    &:hover {
+      color: white;
+    }
+  }
+  .content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    img {
+      border-radius: 12px;
+    }
+  }
+  
+}
+
+.moviePageInfo {
+  width: 100%;
+
+  h4 {
+    font-size: 36px;
+  }
+  span {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 4px;
+    margin-bottom: 20px;
+  }
+  .overview {
+    width: 75%;
+    font-size: 22px;
+  }
+  .cu-p {
+    font-size: 24px;
+    transition: 200ms all;
+    &:hover {
+      color: blue; 
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  border-radius: 16px 16px 0 0;
+  min-height: 200px;
+  bottom: 0;
+  margin: auto;
+  background-color: #4A148C;
+  i {
+    color: white;
+    font-size: 70px;
+    transition: 200ms all;
+    &:hover {
+      color: #1e0838;
+    }
+  }
+}
+
+.o-hidden {
+  visibility: hidden;
+}
+
+
+#img {
+  animation-name: logoAnimation;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+}
+
+
+
+@keyframes logoAnimation {
+  0% {
+      transform: scale(0.8, 0.8) rotate(0deg);
+  } 
+  50% {
+      transform: scale(1.2, 1.2) rotate(360deg);
+  }
+  100% {
+      transform: scale(0.8, 0.8) rotate(0deg);
+
+  }
+ 
+}
